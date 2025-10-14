@@ -7,13 +7,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
 @Table(name="users")
-public class User {
+public class User extends AuditEntity{
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
@@ -44,4 +47,16 @@ public class User {
 
     @Column(length=100)
     private String department;
+
+    @OneToMany(mappedBy= "lead")
+    private Set<Project> ledProjects = new HashSet<>();
+
+    @OneToMany(mappedBy= "reporter")
+    private Set<Issue> reportedIssues = new HashSet<>();
+
+    @OneToMany(mappedBy= "assignee")
+    private Set<Issue> assignedIssues = new HashSet<>();
+
+    @OneToMany(mappedBy= "user")
+    private Set<Comment> comments = new HashSet<>();
 }
