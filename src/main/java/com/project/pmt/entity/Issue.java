@@ -1,6 +1,7 @@
 package com.project.pmt.entity;
 
 import com.project.pmt.enums.IssueStatus;
+import com.project.pmt.enums.IssueType;
 import com.project.pmt.enums.Priority;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -35,10 +36,14 @@ public class Issue extends AuditEntity {
     private String issueKey;
 
     @Column(nullable=false, length=200)
-    private String tittle;
+    private String title;
 
     @Column(columnDefinition="Text")
     private String description;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 20)
+    private IssueType type;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable=false, length=20)
@@ -66,7 +71,7 @@ public class Issue extends AuditEntity {
 
     private Integer estimatedHours;
 
-    private Integer LooggedHours;
+    private Integer LoggedHours;
 
     @Column(nullable=false)
     private Integer boardOrder=0;

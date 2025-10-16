@@ -22,7 +22,7 @@ public class Attachment extends AuditEntity{
     private Issue issue;
 
     @Column(nullable=false, length=255)
-    private String fileName;
+    private String filename;
 
     @Column(nullable=false, length=500)
     private String url;
