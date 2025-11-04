@@ -74,7 +74,7 @@ public class Issue extends AuditEntity {
     private Integer LoggedHours;
 
     @Column(nullable=false)
-    private Integer boardOrder=0;
+    private Integer boardOrder = 0;
 
     @OneToMany(mappedBy= "issue", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Comment> comments = new HashSet<>();

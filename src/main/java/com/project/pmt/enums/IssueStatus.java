@@ -1,5 +1,8 @@
 package com.project.pmt.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum IssueStatus {
     TODO("To Do"),
     IN_PROGRESS("In Progress"),
@@ -12,7 +15,4 @@ public enum IssueStatus {
         this.displayName = displayName;
     }
 
-    public String getDisplayName() {
-        return displayName;
-    }
 }

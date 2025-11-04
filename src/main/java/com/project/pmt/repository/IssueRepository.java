@@ -22,7 +22,7 @@ public interface IssueRepository extends JpaRepository<Issue, Long> {
 
     Page<Issue> findByProjectId(Long projectId, Pageable pageable);
 
-    List<Project> findByProjectIdAndStatus(Long projectId, String status);
+    List<Issue> findByProjectIdAndStatus(Long projectId, IssueStatus status);
 
     List<Issue> findByAssigneeId(Long assigneeId);
 
