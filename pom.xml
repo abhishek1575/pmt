@@ -118,6 +118,14 @@
 			<!-- no <version> needed when BOM is imported -->
 		</dependency>
 
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.7.0</version> <!-- Replace with the latest version -->
+		</dependency>
+
+
+
 
 	</dependencies>
 
